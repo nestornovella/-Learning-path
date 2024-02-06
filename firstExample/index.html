@@ -1,0 +1,145 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Interfaz</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="color: whitesmoke" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                style="color: whitesmoke"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" style="color: whitesmoke"
+                >Features</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" style="color: whitesmoke">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link disabled"
+                aria-disabled="true"
+                style="color: whitesmoke"
+                >Disabled</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-sm-12 col-med-4 col-lg-4 col-xl-4">
+          <h2>Formulario de lenguage</h2>
+          <form id="form" action="">
+            <div class="mb-3">
+              <label for="lenguageName" class="form-label">Lengage name:</label>
+              <input
+                value=""
+                class="form-control"
+                type="text"
+                id="lenguageName"
+                name="name"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description:</label>
+              <textarea
+                oninput="verifyCharacters(this, 50)"
+                value=""
+                class="form-control"
+                id="description"
+                rows="4"
+                name="description"
+                placeholder="Description..."
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="developerAmount" class="form-label"
+                >Developers Amount:</label
+              >
+              <input
+                value=""
+                name="amount"
+                type="text"
+                class="form-control"
+                id="developerAmount"
+                placeholder="insert developers amount"
+              />
+            </div>
+            <div class="d-flex flex-column">
+              <button
+                onclick="createNewLenguage()"
+                class="btn btn-success mb-2"
+                type="button"
+              >
+                Save
+              </button>
+              <button
+                onclick="clean()"
+                class="btn btn-secondary"
+                id="cleanBtn"
+                type="button"
+              >
+                Clean
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-12 col-med-8 col-lg-8 col-xl-8 tBody">
+          <h2>Listado de lenguajes</h2>
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Lenguage</th>
+                <th>Programadores</th>
+                <th>description</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="tBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>       
+      </div>     
+    </div>
+  </body>
+  <script src="./index.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+</html>
