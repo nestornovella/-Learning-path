@@ -1,0 +1,24 @@
+.app {
+  min-height: 100vh;
+  background: rgb(41,37,41);
+background: linear-gradient(0deg, rgba(41,37,41,1) 0%, rgba(27,179,208,1) 79%);
+}
+
+.cardImage:hover {
+  scale: 1.1;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.overflow{
+  overflow: hidden;
+}
+
+
+.card-text{
+  padding: 5px;
+}
+
+.mainCarousel{
+  margin-top: 5rem;
+}

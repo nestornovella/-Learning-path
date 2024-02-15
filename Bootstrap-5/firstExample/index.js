@@ -1,12 +1,10 @@
-function mostrarAlerta(){
-    alert("hola mundo")
-  }
+
 
   const cleanBtn = document.getElementById('cleanBtn')
   const form = document.getElementById('form')
   const tBody = document.getElementById('tBody')
-  let index = 1
-
+  const url = 'https://dsxbmbbr-8080.brs.devtunnels.ms/api/languages'
+  const url2 = 'http://localhost:8080/api/languages'
   function clean (){
     Array.from(form).forEach(e => {
       if(e.value){
@@ -19,7 +17,7 @@ function mostrarAlerta(){
     console.log(event.id)
     Array.from(tBody.children).forEach(element => {
      if( element.id === event.id){
-      fetch("http://localhost:8080/api/languages/" + event.id,{
+      fetch(url2+ '/' + event.id,{
         method:"DELETE",
         headers:{'Content-Type': 'application/json'},
        
@@ -32,8 +30,8 @@ function mostrarAlerta(){
 
   function getAllLanguagesList(){
     tBody.innerHTML =""
-    console.log(tBody.innerHTML)
-    const lenguagesList = fetch("http://localhost:8080/api/languages")
+
+    const lenguagesList = fetch(url2)
 
     lenguagesList.then(response => response.json())
     .then(data => {
@@ -67,7 +65,7 @@ function mostrarAlerta(){
 
     
 
-    fetch("http://localhost:8080/api/languages",{
+    fetch(url2,{
       method:"POST",
       headers:{'Content-Type': 'application/json'},
       body: JSON.stringify(newLenguage)
@@ -86,7 +84,6 @@ function mostrarAlerta(){
 
 
   function verifyCharacters(element, maxChars){
-
     if(element.value.length > maxChars){
       element.value = element.value.slice(0,maxChars)
     }
